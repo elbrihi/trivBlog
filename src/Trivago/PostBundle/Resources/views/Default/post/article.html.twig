@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+
+.img
+{
+  
+  width: 100% !important ;
+  height: 40% !important;
+}
+</style>
+  <div class="article"></div>
+  <br/>
+  <br/>
+  <br/><br/><br/>
+<script>
+
+    var article = '{{ article|e('js') }}';
+    //console.log(article);
+    var jsonObj = $.parseJSON('[' + article + ']');
+    var object1 = JSON.parse(jsonObj);
+    var text = object1.content[0].text;
+    var img = object1.thumbnail_url ;
+    var title = object1.card_title ;
+    
+    $('.article').append(html(img,text,title));
+
+   function html(img,text,title)
+   {
+     var html = '';
+     html +='<img src="'+img+'" alt="Snow" style="width:100%;">';
+     html +='<div class="title"><h2>'+title+'<h2></div>';
+     html +='<div class="text">'+text+'</div>';
+     
+     return html ;
+
+   }
+
+    console.log(object1);
+</script>
+{% endblock %}

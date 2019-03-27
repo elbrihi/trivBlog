@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<p> Pragraphe 1 </p>
+<p> pragraphe 2</p> 
+<h1 class="text-center">Teturial Blog</h1>
+        <p class="text-center"> Like this Vedeo assk </p>
+        <div class="row">
+            <div class="post">
+
+            </div>
+            <!--div class="col-md-4">
+                <div class="single-blog">
+                    <p class="blog-meta">By Admine <span>Septembre 24</span></p>
+                    <img src="g1.jpg" alt="">
+                    <h2><a href="#">Learn to make website</a></h2>
+                    <p class="blog-text">
+                        Like this vedeo ask and ask you question about your question Like
+                        this vedeo ask and ask this </p>
+                        <p><a href="" class="read-more-btn">Read More </a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-blog">
+                    <p class="blog-meta">By Admine <span>Septembre 24</span></p>
+                    <img src="g1.jpg" alt="">
+                    <h2><a href="#">Learn to make website</a></h2>
+                    <p class="blog-text">
+                        Like this vedeo ask and ask you question about your question Like
+                        this vedeo ask and ask this </p>
+                        <p><a href="" class="read-more-btn">Read More </a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-blog">
+                    <p class="blog-meta">By Admine <span>Septembre 24</span></p>
+                    <img src="g1.jpg" alt="">
+                    <h2><a href="#">Learn to make website</a></h2>
+                    <p class="blog-text">
+                        Like this vedeo ask and ask you question about your question Like
+                        this vedeo ask and ask this </p>
+                        <p><a href="" class="read-more-btn">Read More </a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-blog">
+                    <p class="blog-meta">By Admine <span>Septembre 24</span></p>
+                    <img src="g1.jpg" alt="">
+                    <h2><a href="#">Learn to make website</a></h2>
+                    <p class="blog-text">
+                        Like this vedeo ask and ask you question about your question Like
+                        this vedeo ask and ask this </p>
+                        <p><a href="" class="read-more-btn">Read More </a></p>
+                </div>
+            </div-->
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+{{ dump('post_menu') }}
+
+
+       <script>
+        $(document).ready(function(){
+            foo();
+       
+            function foo()
+            {
+                $.ajax({
+                   
+                    url:'{{ (path('trivago_post_post_data')) }}',
+                    dataType:'json',
+                    success:function(data)
+                    {
+                        var url = 'http://trivago-magazine-work-sample-server.s3-website.eu-central-1.amazonaws.com/latest_posts.json';
+                        var res = url.match('/latest_posts.json');
+                        if(!res)
+                        {
+                            console.log(res);   
+                        }
+                        
+                           //$('.post').append(html());
+                        console.log(data);
+                    /*    var data = data.sort(function(obj1, obj2) {
+                        // Ascending: first age less than the previous
+                          return   obj2.id - obj1.id;
+
+                        });*/
+                        console.log(data);
+                        for(var index = 0; index< data.length ; index++)
+                        {
+                            
+                            $('.post').append(html(data[index].card_title,data[index].thumbnail_url,data[index].excerpt,data[index].id));
+                            
+                        }
+                        
+                    }
+                })
+               
+            }
+            var card_title = '';
+            var thumbnail_url = '';
+            var excerpt = '';
+            var id = ''; 
+            function html(card_title, thumbnail_url,excerpt,id)
+            {    
+                
+                
+                
+                var article1 = '{{ path('trivago_post_article_data', {'id' : 'id' }) }}';
+                article1  = article1 .replace("id", id);
+                    //window.location.replace(article1 );
+
+                console.log(article1);
+                
+                var html = '';
+               
+                html += '<div class="col-md-4">';
+                html += '    <div class="single-blog">';
+                html += '        <h2>'+card_title+'</h2>';
+                html += '        <img src="'+thumbnail_url+'" alt="">';
+                html += '        <p class="blog-text">';
+                html += '           '+excerpt+'... </p>';
+                html += '            <p><a href="'+article1+'" class="read-more-btn">Read More </a></p>';
+                html += '    </div>';
+                html += '</div>';
+                
+                
+                return html;
+            }
+
+
+        });
+        
+        //$.('.read-more-btn').
+        </script>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

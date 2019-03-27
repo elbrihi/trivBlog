@@ -1,0 +1,11 @@
+trivago_post_post:
+    resource: "@TrivagoPostBundle/Controller/PostController.php"
+    type:     annotation
+
+trivago_post:
+    resource: "@TrivagoPostBundle/Resources/config/routing.xml"
+    prefix:   /post/
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
