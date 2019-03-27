@@ -11,6 +11,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+        
         return $this->render('TrivagoPostBundle:Default:index.html.twig');
     }
 
@@ -22,29 +23,7 @@ class DefaultController extends Controller
             $rest
         );
     }
-    public function fetchArticlesAction()
-    {
-        $rest = $this->get('post_menu')->getPostItems();
-        
-        return new Response(
-            $rest
-        );
-    }
-    public function articleAction(Request $request)
-    {
-        
-        $id = $request->get('id');
-        $article = $this->get('post_menu')->getArticleItems($id);
-        
-        $article = json_encode($article);//**JSON */
-      
-       
-        return $this->render('TrivagoPostBundle:Default:post/article.html.twig',
-          array(
-            'article' => $article,
-            'id' => $id,
-        ));
-    }
+  
     public function jAction()
     {
        $a= array(

@@ -14,6 +14,9 @@
         <service id="trivago_post.post_menu" class="Trivago\PostBundle\Services\PostMenu">
             <argument type="service" id="router" />
         </service>
+        <service id="trivago_post.article" class="Trivago\PostBundle\Services\Article">
+            <argument type="service" id="router" />
+        </service>
     </services>
  
 

@@ -13,8 +13,11 @@
     <route id="trivago_post_post_data" path ="/fetch/">
         <default key="_controller">TrivagoPostBundle:Default:fetch</default>
     </route>
-    <route id="trivago_post_article_data" path ="/article/{id}">
+    <!--route id="trivago_post_article_data" path ="/article/{id}">
         <default key="_controller">TrivagoPostBundle:Default:article</default>
+    </route-->
+    <route id="trivago_post_article_data" path ="/article/{id}">
+        <default key="_controller">TrivagoPostBundle:Article:getArticle</default>
     </route>
     <route id="trivago_post_post_data" path ="/fetch/">
         <default key="_controller">TrivagoPostBundle:Default:fetch</default>
