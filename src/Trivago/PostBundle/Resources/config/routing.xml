@@ -7,15 +7,9 @@
     <route id="trivago_post_homepage" path="/">
         <default key="_controller">TrivagoPostBundle:Default:index</default>
     </route>
-    <!--route id="trivago_catalog_category_treeview" path ="/category/treeview/">
-        <default key="_controller">FoggylineCatalogBundle:Default:treeview</default>
-    </route-->
     <route id="trivago_post_post_data" path ="/fetch/">
         <default key="_controller">TrivagoPostBundle:Default:fetch</default>
     </route>
-    <!--route id="trivago_post_article_data" path ="/article/{id}">
-        <default key="_controller">TrivagoPostBundle:Default:article</default>
-    </route-->
     <route id="trivago_post_article_data" path ="/article/{id}">
         <default key="_controller">TrivagoPostBundle:Article:getArticle</default>
     </route>
