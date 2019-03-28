@@ -69,16 +69,10 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 leogout_seo:
-    general:
-        title: Default title
-        description: Default description.
-        image: http://images.com/poneys/12/large # This one is shared by open graph and twitter only
-    basic:
-        title: Awesome title
-        keywords: default, keywords
-    og:
-        type: website
-        url: http://test.com/articles
-    twitter:
-        card: summary
-        site: '@leogoutt'
+   general:
+       title: Default title
+       description: Default description.
+       image: http://images.com/poneys/12/large # This one is shared by open graph and twitter only
+   basic: ~
+   og: ~
+   twitter: ~

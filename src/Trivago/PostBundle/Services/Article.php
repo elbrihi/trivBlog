@@ -2,19 +2,23 @@
 
 namespace Trivago\PostBundle\Services;
 
-use Symfony\Bundle\FrameworkBundle\Routing\Router;
 
 class Article
 {
-  
     
+    private $menu_post;
 
+    public function __construct($menu_post)
+
+    {
+      $this->menu_post = $menu_post;
+    }
+    
     public function getArticleItems($idArtcile)
     {
       
-      $file = "http://trivago-magazine-work-sample-server.s3-website.eu-central-1.amazonaws.com/latest_posts.json" ;
-      $map_json = file_get_contents($file);
-      $map_json = json_decode($map_json,true);
+    
+      $map_json = json_decode($this->menu_post->getPostItems(),true);
       for ($i=0; $i < sizeof($map_json)-1; $i++) { 
 
         if($map_json[$i]['id']==$idArtcile)
