@@ -5,15 +5,22 @@ namespace Trivago\PostBundle\Services;
 
 class Article
 {
-    
+    /**
+     * 
+     * 
+     * container of the PostMenu serivce
+     */
     private $menu_post;
-
+    /**
+     * 
+     * injecte the PostMenu Service to get the uri of the artcile 
+     */
     public function __construct($menu_post)
 
     {
       $this->menu_post = $menu_post;
     }
-    
+
     public function getArticleItems($idArtcile)
     {
       
