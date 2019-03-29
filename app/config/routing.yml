@@ -1,5 +1,5 @@
 trivago_post_post:
-    resource: "@TrivagoPostBundle/Controller/PostController.php"
+    resource: "@TrivagoPostBundle/Controller/DefaultController.php"
     type:     annotation
 
 trivago_post:
@@ -9,3 +9,4 @@ trivago_post:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+

@@ -13,8 +13,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
          
         $container->setDefinition('post_menu', $container->getDefinition('trivago_post.post_menu'));
         $container->setDefinition('article', $container->getDefinition('trivago_post.article'));
-      
-        // Override the core module 'category_menu' service     
+        
     }
 }
 

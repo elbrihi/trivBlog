@@ -4,6 +4,7 @@ namespace Trivago\PostBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+
 class DefaultControllerTest extends WebTestCase
 {
     private $client = null;

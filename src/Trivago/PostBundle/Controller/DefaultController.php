@@ -9,12 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
-    {
-        
-        return $this->render('TrivagoPostBundle:Default:index.html.twig');
-    }
-
+    
+    
     public function fetchAction()
     {
         $rest = $this->get('post_menu')->getPostItems();
@@ -24,15 +20,5 @@ class DefaultController extends Controller
         );
     }
   
-    public function jAction()
-    {
-       $a= array(
-            'a'=>1,
-            'b'=>2,
-            'c'=>3,
-        );
-        
-        $a = json_encode($a);
-        return $a;
-    }
+   
 }
