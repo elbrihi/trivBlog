@@ -3,6 +3,7 @@
 namespace Trivago\PostBundle\Tests\Services;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Trivago\PostBundle\Services\Article;
 use Trivago\PostBundle\Services\PostMenu;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -13,30 +14,31 @@ class PostMenuTest extends KernelTestCase
 
     private  $service  ;
 
+    private  $menu_post;
+
+    private  $trivago_api;
+
+    private $article ;
     public function setUp()
     {
       static::bootKernel();
       
       $this->container = static::$kernel->getContainer();
 
-      $trivago_api = $this->container->getParameter('trivago_api');
-      
-      $this->service = new PostMenu($trivago_api);
-      
-    }
+      $this->trivago_api = $this->container->getParameter('trivago_api');
 
-    public function testGetPostItems()
-    {   
+      $this->postMenu = new PostMenu($this->trivago_api);
+
+      $this->article = new Article($this->postMenu);
+   
       
-      
-      $this->assertNotEmpty($this->service->getPostItems());
     }
 
     public function testgetArticleItems()
     {
-      
-      $this->assertNotEmpty($this->service->getArticleItems(60301));
+     
+      $this->assertNotEmpty($this->article->getArticleItems(60301));
     }
 
-      
+    
 }

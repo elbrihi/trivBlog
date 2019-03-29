@@ -20,34 +20,30 @@ class Article
 
     {
       $this->menu_post = $menu_post;
-     
-
     }
 
-
-    public function getArticleItems($idArtcile)
+    public function getArticleItems($idArtcile,$file='')
     {
-      $file_json_article = $this->menu_post->getPostItems();
-
-      $map_json = json_decode($file_json_article,true);
-   
+      
+    
+      $map_json = json_decode($this->menu_post->getPostItems(),true);
+      
+      
       for ($i=0; $i < sizeof($map_json)-1; $i++) { 
        
         if($map_json[$i]['id']==$idArtcile)
         {
             $map = array();
-
             $map = $map_json[$i];
-
+           
             $file = $map['uri'] ;
-          
+            
         }
       }
    
       $map[] = file_get_contents($file);
- 
+      
       $map =  file_get_contents($map['uri']);
-
       return  $map ;
    
     }

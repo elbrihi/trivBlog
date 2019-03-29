@@ -11,7 +11,9 @@ class DefaultControllerTest extends WebTestCase
     public function setUp()
     {
       $this->client = static::createClient();
+
       $this->router = $this->client->getContainer()->get('router');
+      
     }
     public function testIndex()
     {

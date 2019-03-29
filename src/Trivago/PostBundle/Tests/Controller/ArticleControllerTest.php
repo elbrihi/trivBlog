@@ -7,11 +7,15 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class ArticleControllerTest extends WebTestCase
 {
     private $client = null;
+  
+
     public function setUp()
     {
       $this->client = static::createClient();
       $this->router = $this->client->getContainer()->get('router');
     }
+
+
     public function testIndex()
     {
         $client = static::createClient();
