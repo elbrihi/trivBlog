@@ -22,20 +22,20 @@ class ArticleControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-       // $this->assertContains('Hello World', $client->getResponse()->getContent());
     }
 
     
     public function testfetchArticlesAction()
     {
-        $this->client->request('GET', $this->router->generate('trivago_post_article_data',array('id'=>0)));
+        $this->client->request('GET', $this->router->generate('trivago_post_article_data',array('id'=>60301)));
         $this->assertTests();
      
     }
-    public function tesJAction()
+    public function testGetArticleAction()
     {
-        $this->assertTests();
+        $this->assertTests(); 
     }
+    
     private function assertTests()
     {
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());

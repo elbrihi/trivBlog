@@ -6,9 +6,9 @@
 
 
 
-    <route id="trivago_post_homepage" path="/">
+    <!--route id="trivago_post_homepage" path="/">
         <default key="_controller">TrivagoPostBundle:Default:index</default>
-    </route>
+    </route-->
 
     <route id="trivago_post_post_data" path ="/fetch/">
         <default key="_controller">TrivagoPostBundle:Default:fetch</default>

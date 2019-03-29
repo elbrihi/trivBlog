@@ -32,11 +32,7 @@ class PostMenuTest extends KernelTestCase
       $this->assertNotEmpty($this->service->getPostItems());
     }
 
-    public function testgetArticleItems()
-    {
-      
-      $this->assertNotEmpty($this->service->getArticleItems(60301));
-    }
+    
 
       
 }
